@@ -1,0 +1,529 @@
+//
+// Game (open rice TQF event)
+// --------------------------------------------------
+@import "compass";
+@import "susy";
+@import "breakpoint";
+
+// Core variables and mixins
+@import "variable";
+@import "mixin";
+
+$scale: 0.74;
+$top-fix: 1;
+
+// Game
+#section3{
+	height: 600px;
+	overflow: hidden;
+	background: #a9f1fb url("../images/game/bg_game_mobile.gif") 50% 0 no-repeat;
+	@include breakpoint($pad){
+		height: 740px;
+		background: #a9f1fb url("../images/game/bg_game.gif") 50% 0 no-repeat;
+	}
+	.wrap-title{
+		position: absolute;
+		left: 0;
+		width: 100%;
+		margin: -35px 0 0;
+		.section-title{
+			text-align: center;
+		}
+	}
+	.wrap-game{
+		@include transform(scale(0.8) translateY(-50px));	
+		position: relative;
+		height: 100%;
+		@include breakpoint($pad){
+			@include transform(scale(1) translateY(0));
+		}
+		img{
+			max-width: none;
+		}
+		[class*="btn-"]{
+			@include transition(background .2s);
+			display: inline-block;
+			margin: 0 15px * $scale;
+			padding: 16px * $scale 37px * $scale;
+			border-radius: 10px * $scale;
+			font-size: 28px * $scale;
+			color: #fff;
+			background: #ec6c00;
+			border: none;
+			text-align: center;
+			cursor: pointer;
+			&:hover{
+				background: lighten(#ec6c00, 5%);
+			}
+		}
+		.wrap-btn{
+			text-align: center;
+		}
+		.btn-user-info{
+			margin-top: 380px * $scale;
+		}
+	}
+}
+
+
+#section3.game{
+	.obj{
+		position: absolute;
+		left: 50%;
+	}
+	// common obj
+	.talk{
+		@include transform(scale(0.85) translateX(-15px));
+		@include breakpoint($pad){
+			@include transform(scale(1) translateX(0));
+		}
+	}
+	.text{
+		img{
+			width: 333px;
+			height: 333px;
+		}
+	}
+	.question{
+		width: 256px;
+		height: 158px;
+		z-index: 99;
+		font-size: 22px * $scale;
+		&.q1{
+			background: url("../images/game/q1_abx.png") 0 0 no-repeat;
+			background-size: 241px 158px;
+		}
+		&.q2{
+			background: url("../images/game/q2_abx.png") 0 0 no-repeat;
+			background-size: 256px 158px;
+		}
+		&.q3{
+			background: url("../images/game/q3_abx.png") 0 0 no-repeat;
+			background-size: 256px 158px;
+		}
+		&.q4{
+			width: 262px;
+			background: url("../images/game/q4_abx.png") 0 0 no-repeat;
+			background-size: 262px 158px;
+		}
+		a{
+			display: block;
+			line-height: 1.15;
+			font-size: 0;
+			text-indent: -9999px;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+	.next{
+		top: 177px * $scale;
+		left: 50%;
+		margin-left: -225px * $scale;
+		width: 333px;
+		height: 333px;
+		// border-top: 4px solid #c3c3c3;
+		text-align: center;
+		background: url("../images/game/bg_text.png") 0 0 no-repeat;
+		.btn-next{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 99;
+			margin: 40px 0 0 -58px;
+		}
+	}
+	#obj-group{
+		.air-ball{
+			// top: 42px - $top-fix;
+			top: 82px * $scale;
+			margin-left: 431px * $scale;
+		}
+		.mountain{
+			top: 295px * $scale;
+			margin-left: -289px * $scale;
+			@include breakpoint($pad){
+				display: none;	
+			}
+		}
+		.doctor{
+			top: 180px * $scale;
+			margin-left: -275px * $scale;
+			@include breakpoint($pad){
+				top: 258px * $scale;
+				margin-left: -436px * $scale;	
+			}	
+		}
+		.car-game{
+			top: 617px * $scale;
+			margin-left: -858px * $scale;
+		}
+		#bingo{
+			top: 73px * $scale;
+			margin-left: -112px * $scale;
+			@include breakpoint($pad){
+				top: 113px * $scale;
+				margin-left: -32px * $scale;
+			}
+		}
+		#wrong{
+			top: 78px * $scale;
+			margin-left: -50px * $scale;
+			@include breakpoint($pad){
+				top: 118px * $scale;
+				margin-left: 30px * $scale;
+			}
+		}
+		.icon-sound{
+			display: none;
+			top: 140px;
+			width: 30px;
+			height: 30px;
+			margin-left: -15px;
+			z-index: 9;
+			width: 30px;
+			height: 30px;
+			cursor: pointer;
+			img{
+				width: 30px;
+				height: 30px;
+			}
+		}
+	}
+	#scene-start{
+		.text{
+			top: 177px * $scale;
+			margin-left: -225px * $scale;
+		}
+		.tree{
+			top: 575px * $scale;
+			margin-left: -371px * $scale;
+		}
+		.q-back{
+			top: 678px * $scale;
+			margin-left: 90px * $scale;
+		}
+		.next{
+			border: none;
+			top: 177px * $scale;
+			margin-left: -225px * $scale;
+			background: transparent;
+			.btn-next{
+				margin-top: 53px;
+				margin-left: -85px;
+			}
+		}
+	}
+	#scene1{
+		.text{
+			top: 177px * $scale;
+			margin-left: -225px * $scale;
+		}
+		.tree{
+			top: 575px * $scale;
+			margin-left: -371px * $scale;
+		}
+		.q-back{
+			top: 678px * $scale;
+			margin-left: 90px * $scale;
+		}
+		.q-front{
+			top: 515px * $scale;
+			margin-left: -94px * $scale;
+		}
+	}
+	#scene2{
+		.text{
+			top: 177px * $scale;
+			margin-left: -225px * $scale;
+		}
+		.factory{
+			top: 527px * $scale;
+			margin-left: -592px * $scale;
+		}
+		.q-back{
+			top: 720px * $scale;
+			margin-left: 69px * $scale;
+		}
+		.q-front{
+			top: 543px * $scale;
+			margin-left: -94px * $scale;
+		}
+	}
+	// Q1
+	#scene3{
+		.text{
+			top: 177px * $scale;
+			margin-left: -225px * $scale;
+		}
+		.deco{
+			top: 498px * $scale;
+			margin-left: -512px * $scale;
+			@include transform(scale(0.7));
+			@include breakpoint($pad){
+				@include transform(scale(1));
+			}
+		}
+		.q-back{
+			top: 643px * $scale;
+			margin-left: 70px * $scale;
+			@include breakpoint($pad){
+				margin-left: 170px * $scale;
+			}
+			@include transform(scale(0.7) translateX(-100px));
+			@include breakpoint($pad){
+				@include transform(scale(1) translateX(0));
+			}
+		}
+		.talk{
+			top: 90px * $scale;
+			margin-left: -270px * $scale;
+			@include breakpoint($pad){
+				top: 170px * $scale;
+				margin-left: -384px * $scale;
+			}
+		}
+		.question{
+			top: 237px * $scale;
+			left: 71px * $scale;
+			// width: 325px * $scale;
+			a{
+				min-height: 70px * $scale;
+				margin-left: 50px * $scale;
+				padding-right: 20px * $scale;
+				&:first-child{
+					margin-top: 18px * $scale;
+				}
+			}
+			span{
+				color: #ec6c00;
+			}
+		}
+	}
+	// Q2
+	#scene4{
+		.text{
+			top: 177px * $scale;
+			margin-left: -225px * $scale;
+		}
+		.deco{
+			top: 590px * $scale;
+			margin-left: -507px * $scale;
+			@include transform(scale(0.7) translateX(20px));
+			@include breakpoint($pad){
+				@include transform(scale(1) translateX(0));
+			}
+		}
+		.q-back{
+			top: 553px * $scale;
+			margin-left: -100px * $scale;
+			@include breakpoint($pad){
+				margin-left: -55px * $scale;
+			}
+			@include transform(scale(0.7) translateX(-80px));
+			@include breakpoint($pad){
+				@include transform(scale(1) translateX(0));
+			}
+			.q-dot{
+				top: 33px * $scale;
+				left: 120px * $scale;
+			}
+		}
+		.talk{
+			top: 25px * $scale;
+			margin-left: -270px * $scale;
+			@include breakpoint($pad){
+				top: 70px;
+				margin-left: -290px;
+			}
+		}
+		.question{
+			top: 191px * $scale;
+			left: 62px * $scale;
+			// min-width: 325px * $scale;
+			a{
+				min-height: 75px * $scale;
+				margin-left: 50px * $scale;
+				&:first-child{
+					margin-top: 15px * $scale;
+				}
+			}
+			span{
+				color: #0061b3;
+				text-decoration: underline;
+			}
+		}
+	}
+	// Q3
+	#scene5{
+		.text{
+			top: 177px * $scale;
+			margin-left: -225px * $scale;
+		}
+		// .deco{
+		// 	top: 590px * $scale;
+		// 	margin-left: -507px * $scale;
+		// 	@include transform(scale(0.7) translateX(20px));
+		// 	@include breakpoint($pad){
+		// 		@include transform(scale(1) translateX(0));
+		// 	}
+		// }
+		.q-boy{
+			top: 570px * $scale;
+			margin-left: -250px * $scale;
+			@include transform(scale(0.95) translateX(-20px));
+			@include breakpoint($pad){
+				@include transform(scale(1) translateX(0));
+			}
+			.q-girl-dot{
+				top: 25px * $scale;
+				left: 103px * $scale;
+			}
+		}
+		.talk{
+			top: 17px;
+			margin-left: -270px * $scale;
+			@include breakpoint($pad){
+				top: 102px * $scale;
+				margin-left: -394px * $scale;
+			}	
+		}
+		.question{
+			top: 212px * $scale;
+			left: 70px * $scale;
+			// min-width: 325px * $scale;
+			a{
+				min-height: 70px * $scale;
+				margin-left: 55px * $scale;
+				padding-right: 40px * $scale;
+				&:first-child{
+					margin-top: 20px * $scale;
+				}
+			}
+			span{
+				color: #0061b3;
+			}
+			em{
+				color: #ec6c00;
+				font-style: normal;
+			}
+		}
+	}
+	// Q4
+	#scene6{
+		.text{
+			top: 177px * $scale;
+			margin-left: -225px * $scale;
+		}
+		.q-boy{
+			top: 590px * $scale;
+			margin-left: -270px * $scale;
+			img.photo{
+				margin-top: 51px * $scale;
+				margin-left: 22px * $scale;
+			}
+			img#s6-Q-boy{
+				max-width: 325px;
+				@include breakpoint($pad){
+					max-width: none;
+				}
+			}
+			.q-boy-doctor{
+				top: -63px * $scale;
+				left: 42px * $scale;
+				@include breakpoint($pad){
+					top: -163px * $scale;
+					left: -45px * $scale;
+				}
+				img{
+					max-width: 400px;
+					@include breakpoint($pad){
+						max-width: none;
+					}
+				}
+			}
+			.q-boy-juice{
+				top: -31px * $scale;
+				left: 387px * $scale;
+				@include breakpoint($pad){
+					top: -31px * $scale;
+					left: 437px * $scale;
+				}
+				img{
+					max-width: 70px;
+					@include breakpoint($pad){
+						max-width: none;
+					}
+				}
+				img.photo{
+					margin-top: 51px * $scale;
+				}
+			}
+			.q-boy-photo{
+				top: -85px * $scale;
+				left: -20px * $scale;
+				@include breakpoint($pad){
+					top: -115px * $scale;
+					left: -57px * $scale;
+				}
+				img{
+					max-width: 420px;
+					@include breakpoint($pad){
+						max-width: none;
+					}
+				}
+			}
+		}
+		.talk{
+			top: 42px * $scale;
+			margin-left: -270px * $scale;
+			@include breakpoint($pad){
+				top: 91px;
+				margin-left: -384px * $scale;
+			}
+		}
+		.question{
+			top: 197px * $scale;
+			left: 60px * $scale;
+			// min-width: 325px * $scale;
+			a{
+				min-height: 75px * $scale;
+				margin-left: 50px * $scale;
+				padding-right: 25px * $scale;
+				&:first-child{
+					margin-top: 15px * $scale;
+				}
+				// &:last-child{
+				// 	font-size: 20px * $scale;
+				// }
+			}
+			span{
+				color: #ec6c00;
+			}
+		}
+		.next{
+			background: none;
+			.btn-next{
+				margin-top: 5px;
+				margin-left: -85px;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

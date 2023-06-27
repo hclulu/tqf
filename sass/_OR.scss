@@ -1,0 +1,44 @@
+//
+// Open Rice CI
+// --------------------------------------------------
+
+/* OR TOP CI */
+.FL {float:left;}
+.FR {float:right;}
+.MR15 {margin-right: 15px;}
+.MR5 {margin-right: 5px;}
+.MB5 {margin-bottom: 5px;}
+.ML20 {margin-left: 20px;}
+.MB20 {margin-bottom: 20px;}
+.clearfix {display: inline-block;}
+// html[xmlns] .clearfix {display: block;}
+// *html .clearfix {height: 1%;}
+
+#OR_TOP-footer_bg { width:100%; z-index:200; position:absolute; }
+#OR_TOP {width:100%; height:25px; clear: both;font-family: Arial, Helvetica, sans-serif;}
+#OR_TOP_logo {position: absolute;margin: 0 0 0 20px;z-index: 10; width:150px; height:68px; background-image: url(../images/ci/logo.png); background-size:cover;}
+#OR_TOP_lang {color:#CCC;font-size:12px;margin:10px 20px 0 0;}
+#OR_TOP_lang a {color:#CCC;text-decoration:none;}
+#OR_TOP_lang a:hover {color:#f5c53d}
+#OR_TOP_fb {width:8px;padding:0;margin-top: 4px;}
+#OR_TOP_fb a {display:block;overflow:hidden;width: 100%;height: 0;padding-top: 16px;background:url(../images/ci/fb.png) 0 0 no-repeat;}
+#OR_TOP_fb a:hover {background-position: top right;}
+#OR_TOP_tt {width:19px;padding:0;margin-top: 7px;}
+#OR_TOP_tt a {display:block;overflow:hidden;width: 100%;height: 0;padding-top: 12px;background:url(../images/ci/twitter.png) 0 0 no-repeat;}
+#OR_TOP_tt a:hover {background-position: top right;}
+#OR_TOP_wb {width:18px;padding:0;margin-top: 5px;}
+#OR_TOP_wb a {display:block;overflow:hidden;width: 100%;height: 0;padding-top: 15px;background:url(../images/ci/weibo.png) 0 0 no-repeat;}
+#OR_TOP_wb a:hover {background-position: top right;}
+@media (max-width:960px){#OR_TOP{ width:99%; margin:0 auto;}}
+@media (max-width:499px){#OR_TOP_logo{width:70px;height:32px; margin: 0 0 0 5px;}#OR_TOP-footer_bg{width: 100%;z-index: 200;position: absolute;}}
+
+/* OR FOOT CI */
+#OR_CI {float:inherit;clear: both; }
+#OR_FOOT {width:100%;margin-right:auto;margin-left:auto;clear: both;height: 15px;background: #000;color: #CCC;font-size:12px;padding: 10px 1%;}
+#OR_FOOT a {color:#CCC;text-decoration:none;}
+#OR_FOOT a:hover {color:#f5c53d;}
+#OR_FOOT_logo {margin: -8px 5px 0 -2px;}
+#footer	{font-family: 'Maven Pro', Helvetica, Arial, sans-serif;color: #ffffff;background-color: #000000;padding: 14px 10px 11px;}
+#footer p	{margin: 0;}
+#footer small	{font-size: 12px; line-height: 1;}
+

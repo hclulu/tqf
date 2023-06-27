@@ -1,0 +1,43 @@
+//
+// Grid (susy grid system)
+// --------------------------------------------------
+@import "compass";
+@import "susy";
+@import "breakpoint";
+
+// Mixin
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+$susy: (
+    columns: 12,
+    gutters: 1/3,
+    container: 1100px,
+    global-box-sizing: border-box,
+    debug: (image: hide)
+);
+
+@include border-box-sizing;
+
+.container{
+    @include clearfix;
+    @include container();
+    padding-left: 15px;
+    padding-right: 15px;
+    @include breakpoint($pc){
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    @include breakpoint($pc-large){
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
